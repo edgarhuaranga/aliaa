@@ -1,3 +1,38 @@
+document.getElementById("checkboxes").addEventListener('click', function (event) {
+    if (event.target && event.target.matches("input[type='radio']")) {
+        // do something here ...
+        console.log(event.target.value);
+        sucioLayer.remove();
+        palabra = event.target.value;
+        sucioLayer = L.geoJSON(postalcodes, {
+            filter(feature, layer) {
+                if (feature.properties[palabra].presence) {
+                    return true;
+                }
+                else
+                    return true;
+            },
+            style: function (feature) {
+                if (feature.properties[palabra].presence)
+                    return {
+                        color: 'blue',
+                        fillColor: 'blue',
+                        weight: 1
+                    };
+                else
+                    return {
+                        color: 'gray',
+                        fillColor: 'gray',
+                        weight: 1
+                    }
+            },
+            onEachFeature
+        }).addTo(map);
+    }
+});
+
+
+
 const map = L.map('map').setView([37.442, -4.824], 7);
 map.createPane('labels');
 map.getPane('labels').style.zIndex = 650;
@@ -23,7 +58,7 @@ function onEachFeature(feature, layer) {
 
     L.marker([avgY, avgX], {
         icon: L.divIcon({
-            className: 'text-labels',  
+            className: 'text-labels',
             html: feature.properties.name,
         }),
         zIndexOffset: 1000
@@ -32,21 +67,42 @@ function onEachFeature(feature, layer) {
     if (feature.properties && feature.properties.popupContent) {
         popupContent += feature.properties.popupContent;
     }
-    console.log(popupContent);
 
     layer.bindPopup(popupContent);
 }
 
-const freeBusLayer = L.geoJSON(postalcodes, {
+function createData() {
+    console.log(typeof postalcodes);
+    Object.entries(postalcodes.features).map(entry => {
+        let key = entry[0];
+        console.log(postalcodes.features[key].properties);
+    });
+}
+
+let sucioLayer = L.geoJSON(postalcodes, {
     filter(feature, layer) {
-        if (feature.properties.name.startsWith("21")) {
-            // If the property "underConstruction" exists and is true, return false (don't render features under construction)
-            console.log(feature.properties.name)
+        if (feature.properties.sucio.presence) {
             return true;
         }
         else
-            return true;
+            return WebTransportDatagramDuplexStream;
+    },
+    style: function (feature) {
+        console.log(feature);
+        if (feature.properties.sucio.presence)
+            return {
+                color: 'blue',
+                fillColor: 'blue',
+                weight: 1
+            };
+        else
+            return {
+                color: 'gray',
+                fillColor: 'gray',
+                weight: 1
+            }
     },
     onEachFeature
 }).addTo(map);
+
 
