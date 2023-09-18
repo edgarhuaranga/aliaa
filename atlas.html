@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <title>ALIAA - Atlas Lingüístico Interactivo de los Acentos de Andalucía</title>
+
+  <meta name="description" content="Atlas Lingüístico Interactivo de los Acentos de Andalucía">
+  <meta name="author" content="edgarhuaranga">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+  </style>
+
+  <link rel="stylesheet" id="css-main" href="/css/dashmix.min.css">
+  <link rel="stylesheet" id="css-main" href="/css/acentos.css">
+  <script src="https://kit.fontawesome.com/359225d191.js" crossorigin="anonymous"></script>
+  <script src="codes/graph.js" type="text/javascript"></script>
+</head>
+
+<body>
+  
+  <div id="page-container" class="enable-page-overlay side-scroll page-header-fixed">
+
+    <!-- Main Container -->
+    <main id="main-container">
+      <!-- Page Content -->
+      <div class="row g-0 flex-md-grow-1">
+        <div class="col-md-4 col-lg-5 col-xl-3 order-md-1 bg-body-light">
+          <div class="content content-full">
+            <!-- Toggle Side Content -->
+            <div class="d-md-none push">
+              <!-- Class Toggle, functionality initialized in Helpers.dmToggleClass() -->
+              <button type="button" class="btn w-100 btn-alt-primary" data-toggle="class-toggle"
+                data-target="#side-content" data-class="d-none">
+                Side Content
+              </button>
+            </div>
+            <!-- END Toggle Side Content -->
+
+            <!-- Side Content -->
+            <div id="side-content" class="d-none d-md-block push">
+              <div class="block-content">
+                <h2 id="label-tipo-mapa">Palabra</h2>
+                <div class="space-y-1">
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-dieciséis"
+                      name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-dieciséis">dieciséis</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-sucio" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-sucio">sucio</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-casa" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-casa">casa</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-caza" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-caza">caza</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-seis" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-seis">cincuenta</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-cinco" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-cinco">sesenta</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-ceta" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-ceta">ceta</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-oso" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-oso">oso</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-papá" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-papá">papá</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-papás" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-papás">papás</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-tapar" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-tapar">tapar</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-paz" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-paz">paz</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-batí" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-batí">batí</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-batís" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-batís">batís</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-ve" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-ve">ve</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-ves" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-ves">ves</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-lo" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-lo">lo</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-los" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-los">los</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-champú" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-champú">champú</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-champús" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-champús">champús</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-pie" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-pie">pie</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-pies" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-pies">pies</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-grafittis"
+                      name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-grafittis">grafittis</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-teles" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-teles">teles</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-gatas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-gatas">gatas</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-osos" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-osos">osos</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-racha" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-racha">racha</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-raya" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-raya">raya</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-ralla" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-ralla">ralla</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-yegua" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-yegua">yegua</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-llega" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-llega">llega</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-caja" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-caja">caja</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-jabalí" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-jabalí">jabalí</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-ojos" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-ojos">los</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-humo" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-humo">humo</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-hambre" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-hambre">hambre</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-tapar" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-tapar">tapar</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-municipal"
+                      name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-municipal">municipal</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-coser" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-coser">coser</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-cocer" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-cocer">cocer</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-horas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-horas">dos</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-albañil" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-albañil">albañil</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-calcetín"
+                      name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-calcetín">calcetín</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-arcoiris"
+                      name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-arcoiris">arcoiris</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-árbol" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-árbol">árbol</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-graffiti"
+                      name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-graffiti">graffiti</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-pito" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-pito">pito</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-pitos" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-pitos">pitos</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-tele" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-tele">tele</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-tela" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-tela">tela</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-telas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-telas">telas</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-gato" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-gato">gato</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-gatos" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-gatos">gatos</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-oso" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-oso">oso</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-osa" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-osa">osa</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-osas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-osas">osas</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-lupa" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-lupa">lupa</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-lupas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-lupas">lupas</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-ver" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-ver">ver</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-ven" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-ven">ven</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-vez" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-vez">vez</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-va" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-va">va</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-vas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-vas">vas</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-bar" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-bar">bar</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-van" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-van">van</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-gasta" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-gasta">gasta</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-gastas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-gastas">gastas</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-cesta" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-cesta">cesta</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-esta" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-esta">esta</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-está" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-está">está</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-hecha" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-hecha">hecha</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-este" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-este">este</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-esté" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-esté">esté</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-vaca" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-vaca">vaca</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-vasca" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-vasca">vasca</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-vacas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-vacas">vacas</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-vascas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-vascas">vascas</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-capa" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-capa">capa</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-caspa" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-caspa">caspa</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-resbalar"
+                      name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-resbalar">resbalar</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-batas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-batas">dos</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-desde" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-desde">desde</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-dedos" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-dedos">dos</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-musgo" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-musgo">musgo</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-gotas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-gotas">dos</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-llaves" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-llaves">dos</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-yeguas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-yeguas">dos</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-hielos" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-hielos">dos</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-peine" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-peine">peine</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-hielo" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-hielo">hielo</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-huevo" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-huevo">huevo</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-i" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-i">i</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-e" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-e">e</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-a" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-a">a</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-o" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-o">o</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-u" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-u">u</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-pera" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-pera">pera</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-perra" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-perra">perra</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-vara" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-vara">vara</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-barra" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-barra">barra</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-catarata"
+                      name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-catarata">catarata</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-cataratas"
+                      name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-cataratas">cataratas</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-nuca" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-nuca">nuca</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-nucas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-nucas">nucas</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-azúcar" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-azúcar">azúcar</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-cetas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-cetas">cetas</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-cestas" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-cestas">cestas</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-capi" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-capi">capi</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-lápiz" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-lápiz">lápiz</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-Fernándo"
+                      name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-Fernándo">Fernándo</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-Fernández"
+                      name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-Fernández">Fernández</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-batir" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-batir">batir</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-matiz" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-matiz">matiz</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-calor" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-calor">calor</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-veloz" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-veloz">veloz</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-Singapur"
+                      name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-Singapur">Singapur</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-Chapuz" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-Chapuz">Chapuz</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-piel" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-piel">piel</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-azul" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-azul">azul</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-atún" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-atún">atún</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-pez" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-pez">pez</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-ñoño" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-ñoño">ñoño</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-naranja" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-naranja">naranja</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-dedo" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-dedo">dedo</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-coche" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-coche">coche</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-yegua" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-yegua">yegua</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-cayó" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-cayó">cayó</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="" id="checkbox-tizne" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-tizne">tizne</label>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+            <!-- END Side Content -->
+          </div>
+        </div>
+        <div class="col-md-8 col-lg-7 col-xl-9 order-md-0 bg-body-dark">
+          <!-- Main Content -->
+          <div class="content content-full">
+            <div class="block block-rounded">
+              <div class="block-content">
+                <div class="block block-rounded">
+                  <h2>Elige el tipo de mapa</h2>
+                  <div class="space-x-2">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" id="radio-tipo-palabra" name="radio-tipo-mapa"
+                        value="palabra" checked="">
+                      <label class="form-check-label" for="radio-tipo-palabra">Palabra</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" id="radio-tipo-fenomeno" name="radio-tipo-mapa"
+                        value="fenomeno">
+                      <label class="form-check-label" for="radio-tipo-fenomeno">Fenómeno</label>
+                    </div>
+                  </div>
+                </div>
+                <div id='map' style="height: 500px;border:1px red solid;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END Main Content -->
+        </div>
+      </div>
+      <!-- END Page Content -->
+    </main>
+    <!-- END Main Container -->
+
+    <!-- Footer -->
+    <footer id="page-footer" class="bg-body-light">
+      <div class="content py-0">
+        <div class="row fs-sm">
+          <div class="col-sm-6 order-sm-2 mb-1 mb-sm-0 text-center text-sm-end">
+            Crafted with <i class="fa fa-heart text-danger"></i> by <a class="fw-semibold"
+              href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
+          </div>
+          <div class="col-sm-6 order-sm-1 text-center text-sm-start">
+            <a class="fw-semibold" href="https://1.envato.market/r6y" target="_blank">Dashmix 5.6</a> &copy; <span
+              data-toggle="year-copy"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END Footer -->
+  </div>
+  <!-- END Page Container -->
+
+  <!--
+      Dashmix JS
+
+      Core libraries and functionality
+      webpack is putting everything together at assets/_js/main/app.js
+    -->
+  <script src="/js/dashmix.app.min.js"></script>
+  <script src="/js/atlas.js"></script>
+</body>
+
+</html>

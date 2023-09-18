@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <title>Dashmix - Bootstrap 5 Admin Template &amp; UI Framework</title>
+
+  <meta name="description"
+    content="Dashmix - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+  <meta name="author" content="pixelcave">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
+  <link rel="stylesheet" id="css-main" href="/css/dashmix.min.css">
+  <link rel="stylesheet" id="css-main" href="/css/acentos.css">
+  <script src="https://kit.fontawesome.com/359225d191.js" crossorigin="anonymous"></script>
+  <style>
+    select {
+      width: 20em;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="codes/graph.js" type="text/javascript"></script>
+  <div id="page-container" class="enable-page-overlay side-scroll page-header-fixed">
+
+    <!-- Header -->
+    <header id="page-header">
+      <!-- Header Content -->
+      <div class="content-header">
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+          <h2>Atlas Lingüístico Interactivo de los Acentos de Andalucía</h2>
+        </div>
+
+      </div>
+      <!-- END Header Content -->
+
+    </header>
+    <!-- END Header -->
+
+    <!-- Main Container -->
+    <main id="main-container">
+      <!-- Page Content -->
+      <div class="row g-0 flex-md-grow-1">
+        <div class="col-md-4 col-lg-5 col-xl-3 order-md-1 bg-body-dark">
+          <div class="content">
+            <!-- Toggle Side Content -->
+            <div class="d-md-none push">
+              <!-- Class Toggle, functionality initialized in Helpers.dmToggleClass() -->
+              <button type="button" class="btn w-100 btn-alt-primary" data-toggle="class-toggle"
+                data-target="#side-content" data-class="d-none">
+                Side Content
+              </button>
+            </div>
+            <!-- END Toggle Side Content -->
+
+            <!-- Side Content -->
+            <div id="side-content" class="d-none d-md-block push">
+              <div class="block-content">
+                <h2>Filtros</h2>
+                <div id="selected-options" style="display: flex; flex-direction: row;">
+
+                </div>
+                <select name="field2" multiple multiselect-search="true" multiselect-select-all="true"
+                  multiselect-max-items="9" onchange="console.log(this.selectedOptions)" style="height: 30px;">
+                  <option>dieciséis</option>
+                  <option>sucio</option>
+                  <option>casa</option>
+                  <option>caza</option>
+                  <option>cincuenta y seis</option>
+                  <option>sesenta y cinco</option>
+                  <option>ceta</option>
+                  <option>oso</option>
+                  <option>papá</option>
+                  <option>papás</option>
+                  <option>tapar</option>
+                  <option>paz</option>
+                  <option>batí</option>
+                  <option>batís</option>
+                  <option>ve</option>
+                  <option>ves</option>
+                  <option>lo</option>
+                  <option>los</option>
+                  <option>champú</option>
+                  <option>champús</option>
+                  <option>pie</option>
+                  <option>pies</option>
+                  <option>grafittis</option>
+                  <option>teles</option>
+                  <option>gatas</option>
+                  <option>osos</option>
+                  <option>racha</option>
+                  <option>raya</option>
+                  <option>ralla</option>
+                  <option>yegua</option>
+                  <option>llega</option>
+                  <option>caja</option>
+                  <option>jabalí</option>
+                  <option>los ojos</option>
+                  <option>humo</option>
+                  <option>hambre</option>
+                  <option>tapar</option>
+                  <option>municipal</option>
+                  <option>coser</option>
+                  <option>cocer</option>
+                  <option>dos horas</option>
+                  <option>albañil</option>
+                  <option>calcetín</option>
+                  <option>arcoiris</option>
+                  <option>árbol</option>
+                  <option>graffiti</option>
+                  <option>pito</option>
+                  <option>pitos</option>
+                  <option>tele</option>
+                  <option>tela</option>
+                  <option>telas</option>
+                  <option>gato</option>
+                  <option>gatos</option>
+                  <option>oso</option>
+                  <option>osa</option>
+                  <option>osas</option>
+                  <option>lupa</option>
+                  <option>lupas</option>
+                  <option>ver</option>
+                  <option>ven</option>
+                  <option>vez</option>
+                  <option>va</option>
+                  <option>vas</option>
+                  <option>bar</option>
+                  <option>van</option>
+                  <option>gasta</option>
+                  <option>gastas</option>
+                  <option>cesta</option>
+                  <option>esta</option>
+                  <option>está</option>
+                  <option>hecha</option>
+                  <option>este</option>
+                  <option>esté</option>
+                  <option>vaca</option>
+                  <option>vasca</option>
+                  <option>vacas</option>
+                  <option>vascas</option>
+                  <option>capa</option>
+                  <option>caspa</option>
+                  <option>resbalar</option>
+                  <option>dos batas</option>
+                  <option>desde</option>
+                  <option>dos dedos</option>
+                  <option>musgo</option>
+                  <option>dos gotas</option>
+                  <option>dos llaves</option>
+                  <option>dos yeguas</option>
+                  <option>dos hielos</option>
+                  <option>peine</option>
+                  <option>hielo</option>
+                  <option>huevo</option>
+                  <option>i</option>
+                  <option>e</option>
+                  <option>a</option>
+                  <option>o</option>
+                  <option>u</option>
+                  <option>pera</option>
+                  <option>perra</option>
+                  <option>vara</option>
+                  <option>barra</option>
+                  <option>catarata</option>
+                  <option>cataratas</option>
+                  <option>nuca</option>
+                  <option>nucas</option>
+                  <option>azúcar</option>
+                  <option>cetas</option>
+                  <option>cestas</option>
+                  <option>capi</option>
+                  <option>lápiz</option>
+                  <option>Fernándo</option>
+                  <option>Fernández</option>
+                  <option>batir</option>
+                  <option>matiz</option>
+                  <option>calor</option>
+                  <option>veloz</option>
+                  <option>Singapur</option>
+                  <option>Chapuz</option>
+                  <option>piel</option>
+                  <option>azul</option>
+                  <option>atún</option>
+                  <option>pez</option>
+                  <option>ñoño</option>
+                  <option>naranja</option>
+                  <option>dedo</option>
+                  <option>coche</option>
+                  <option>yegua</option>
+                  <option>cayó</option>
+                  <option>tizne</option>
+                  <option>lobezno</option>◊
+                </select>
+
+              </div>
+            </div>
+            <!-- END Side Content -->
+          </div>
+        </div>
+        <div class="col-md-8 col-lg-7 col-xl-9 order-md-0">
+          <!-- Main Content -->
+          <div class="content content-full">
+            <div class="block block-rounded">
+              <div class="block-content">
+                <div class="block block-rounded">
+                  <ul class="nav nav-tabs nav-tabs-block" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="btabs-static-home-tab" data-bs-toggle="tab"
+                        data-bs-target="#btabs-static-home" role="tab" aria-controls="btabs-static-home"
+                        aria-selected="false" tabindex="-1">Fenómeno</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="btabs-static-profile-tab" data-bs-toggle="tab"
+                        data-bs-target="#btabs-static-profile" role="tab" aria-controls="btabs-static-profile"
+                        aria-selected="true">Palabra</button>
+                    </li>
+                  </ul>
+                  <div class="block-content tab-content">
+                    <div class="tab-pane" id="btabs-static-home" role="tabpanel" aria-labelledby="btabs-static-home-tab"
+                      tabindex="0">
+                      <h4 class="fw-normal">Mapa según fenómeno</h4>
+                    </div>
+                    <div class="tab-pane active show" id="btabs-static-profile" role="tabpanel"
+                      aria-labelledby="btabs-static-profile-tab" tabindex="0">
+                      <h4 class="fw-normal">Mapa según palabra</h4>
+                    </div>
+                  </div>
+                </div>
+                <div id='map' style="height: 500px;"></div>
+
+              </div>
+            </div>
+          </div>
+          <!-- END Main Content -->
+        </div>
+      </div>
+      <!-- END Page Content -->
+    </main>
+    <!-- END Main Container -->
+
+    <!-- Footer -->
+    <footer id="page-footer" class="bg-body-light">
+      <div class="content py-0">
+        <div class="row fs-sm">
+          <div class="col-sm-6 order-sm-2 mb-1 mb-sm-0 text-center text-sm-end">
+            Crafted with <i class="fa fa-heart text-danger"></i> by <a class="fw-semibold"
+              href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
+          </div>
+          <div class="col-sm-6 order-sm-1 text-center text-sm-start">
+            <a class="fw-semibold" href="https://1.envato.market/r6y" target="_blank">Dashmix 5.6</a> &copy; <span
+              data-toggle="year-copy"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END Footer -->
+  </div>
+  <!-- END Page Container -->
+
+  <!--
+      Dashmix JS
+
+      Core libraries and functionality
+      webpack is putting everything together at assets/_js/main/app.js
+    -->
+  <script src="/js/dashmix.app.min.js"></script>
+  <script>
+    const map = L.map('map').setView([37.442, -4.824], 7);
+    map.createPane('labels');
+    map.getPane('labels').style.zIndex = 650;
+
+    const cartodbAttribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>';
+
+    const positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+      attribution: cartodbAttribution
+    }).addTo(map);
+
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+
+    function onEachFeature(feature, layer) {
+      let popupContent = `<p><strong>Lugar:</strong> ${feature.properties.name}<br><strong></p>`;
+
+      coordinates = feature.geometry.coordinates[0][0]
+      totalX = 0;
+      totalY = 0;
+      for (x in coordinates) {
+        totalX += coordinates[x][0]
+        totalY += coordinates[x][1]
+      }
+      avgX = totalX / coordinates.length;
+      avgY = totalY / coordinates.length;
+
+      var myTextLabel = L.marker([avgY, avgX], {
+        icon: L.divIcon({
+          className: 'text-labels',   // Set class for CSS styling
+          html: feature.properties.name,
+        }),
+        zIndexOffset: 1000     // Make appear above other map features
+      });
+
+      /*randomValue = getRandomInt(100);
+      if (randomValue > 20)
+        myTextLabel.addTo(map);*/
+
+      if (feature.properties && feature.properties.popupContent) {
+        popupContent += feature.properties.popupContent;
+      }
+
+      layer.bindPopup(popupContent);
+    }
+
+    const freeBusLayer = L.geoJSON(postalcodes, {
+      filter(feature, layer) {
+        if (feature.properties.name.startsWith("21")) {
+          // If the property "underConstruction" exists and is true, return false (don't render features under construction)
+          console.log(feature.properties.name)
+          return true;
+        }
+        else
+          return false;
+      },
+      onEachFeature
+    }).addTo(map);
+
+
+  </script>
+  <script src="js/multiselect-dropdown.js"></script>
+</body>
+
+</html>
