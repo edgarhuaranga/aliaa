@@ -1,4 +1,7 @@
 document.getElementById("checkboxes").addEventListener('click', function (event) {
+    console.log("=====")
+    console.log(event.target);
+    console.log("=====")
     if (event.target && event.target.matches("input[type='radio']")) {
         // do something here ...
         console.log(event.target.value);
@@ -6,6 +9,9 @@ document.getElementById("checkboxes").addEventListener('click', function (event)
         palabra = event.target.value;
         sucioLayer = L.geoJSON(postalcodes, {
             filter(feature, layer) {
+                console.log("-----------")
+                console.log(layer)
+                console.log("-----------")
                 if (feature.properties[palabra].presence) {
                     return true;
                 }
@@ -33,14 +39,15 @@ document.getElementById("checkboxes").addEventListener('click', function (event)
 
 
 
-const map = L.map('map').setView([37.442, -4.824], 7);
+const map = L.map('map').setView([37.442, -4.824], 8);
 map.createPane('labels');
 map.getPane('labels').style.zIndex = 650;
+map.options.minZoom = 7;
 const cartodbAttribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>';
 
-const positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+/*const positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
     attribution: cartodbAttribution
-}).addTo(map);
+}).addTo(map);*/
 
 
 function onEachFeature(feature, layer) {
@@ -64,19 +71,33 @@ function onEachFeature(feature, layer) {
         zIndexOffset: 1000
     });
 
+    
+    // var ele = document.getElementsByName('checkbox-palabra');
+
+    // for (i = 0; i < ele.length; i++) {
+    //     if (ele[i].checked)
+    //         console.log("Gender: " + ele[i].value);
+    // }
+    
+
+    iname = feature.properties.name
+    console.log("name: " + iname);
+    var myTextLabel = L.marker([avgY, avgX], {
+        icon: L.divIcon({
+            className: 'text-labels '+iname,   // Set class for CSS styling
+            html: feature.properties.name,
+        }),
+        zIndexOffset: 1000     // Make appear above other map features
+    });
+    
+    //myTextLabel.addTo(map);
+
+
     if (feature.properties && feature.properties.popupContent) {
         popupContent += feature.properties.popupContent;
     }
 
     layer.bindPopup(popupContent);
-}
-
-function createData() {
-    console.log(typeof postalcodes);
-    Object.entries(postalcodes.features).map(entry => {
-        let key = entry[0];
-        console.log(postalcodes.features[key].properties);
-    });
 }
 
 let sucioLayer = L.geoJSON(postalcodes, {

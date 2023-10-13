@@ -49,11 +49,11 @@
 
             <!-- Side Content -->
             <div id="side-content" class="d-none d-md-block push">
-              <div class="block-content">
+              <div class="block-content" id="palabra-side">
                 <h2 id="label-tipo-mapa">Palabra</h2>
                 <div class="space-y-1" id="checkboxes">
                   <div class="form-check">
-                    <input type="radio" class="form-check-input" value="dieciséis" id="checkbox-dieciséis" name="checkbox-palabra">
+                    <input type="radio" class="form-check-input" value="dieciséis" id="checkbox-dieciséis" name="checkbox-palabra"  checked="">
                     <label class="form-check-label" for="checkbox-dieciséis">dieciséis</label>
                   </div>
 
@@ -694,7 +694,56 @@
 
 
                 </div>
+              </div>
+              <div class="block-content" id="fenomeno-side" style="display: none;">
+                <h2 id="label-tipo-mapa">Fenómeno</h2>
+                <div class="space-y-1" id="checkboxes">
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="dieciséis" id="checkbox-dieciséis" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-dieciséis">F1s y F2s de vocales</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="pitos" id="checkbox-pitos" name="checkbox-palabra">
+                    <label class="form-check-label" for="checkbox-pitos">Consonante /t-/</label>
+                  </div>
+                 <div class="form-check">
+                    <input type="radio" class="form-check-input" value="/d-/" id="checkbox-/d-/" name="checkbox-fenomeno">
+                    <label class="form-check-label" for="checkbox-/d-/">Consonante: /d-/</label>
+                 </div> 
+                 <div class="form-check">
+                    <input type="radio" class="form-check-input" value="/n-/" id="checkbox-/n-/" name="checkbox-fenomeno">
+                    <label class="form-check-label" for="checkbox-/n-/">Consonante: /n-/</label>
+                 </div> 
+                 <div class="form-check">
+                    <input type="radio" class="form-check-input" value="/r-/" id="checkbox-/r-/" name="checkbox-fenomeno">
+                    <label class="form-check-label" for="checkbox-/r-/">Consonante: /r-/</label>
+                 </div> 
+                 <div class="form-check">
+                    <input type="radio" class="form-check-input" value="/s-/" id="checkbox-/s-/" name="checkbox-fenomeno">
+                    <label class="form-check-label" for="checkbox-/s-/">Consonante: /s-/</label>
+                 </div> 
+                 <div class="form-check">
+                    <input type="radio" class="form-check-input" value="/l-/" id="checkbox-/l-/" name="checkbox-fenomeno">
+                    <label class="form-check-label" for="checkbox-/l-/">Consonante: /l-/</label>
+                 </div> 
+                 <div class="form-check">
+                    <input type="radio" class="form-check-input" value="tʃ-/" id="checkbox-tʃ-/"" name="checkbox-fenomeno">
+                    <label class="form-check-label" for="checkbox-tʃ-/">Consonante: /tʃ-/</label>
+                 </div> 
+                 <div class="form-check">
+                    <input type="radio" class="form-check-input" value="/ɲ-/" id="checkbox-/ɲ-/" name="checkbox-fenomeno">
+                    <label class="form-check-label" for="checkbox-/ɲ-/">Consonante: /ɲ-/</label>
+                 </div> 
+                 <div class="form-check">
+                    <input type="radio" class="form-check-input" value="/ʝ-/" id="checkbox-/ʝ-/" name="checkbox-fenomeno">
+                    <label class="form-check-label" for="checkbox-/ʝ-/">Consonante: /ʝ-/</label>
+                 </div> 
+                 <div class="form-check">
+                    <input type="radio" class="form-check-input" value="/ʎ-/" id="checkbox-/ʎ-/" name="checkbox-fenomeno">
+                    <label class="form-check-label" for="checkbox-/ʎ-/">Consonante: /ʎ-/</label>
+                 </div>
 
+                </div>
               </div>
             </div>
             <!-- END Side Content -->
@@ -710,12 +759,12 @@
                   <div class="space-x-2">
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="radio" id="radio-tipo-palabra" name="radio-tipo-mapa"
-                        value="palabra" checked="">
+                        value="palabra" checked="" onclick="handleClick(this);">
                       <label class="form-check-label" for="radio-tipo-palabra">Palabra</label>
                     </div>
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="radio" id="radio-tipo-fenomeno" name="radio-tipo-mapa"
-                        value="fenomeno">
+                        value="fenomeno" onclick="handleClick(this);">
                       <label class="form-check-label" for="radio-tipo-fenomeno">Fenómeno</label>
                     </div>
                   </div>
@@ -753,6 +802,7 @@
 
   
   <script src="./js/dashmix.app.min.js"></script>
+  <script src="./js/controles.js"></script>
   <script src="./js/atlas.js"></script>
 </body>
 
